@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>O Mineiro Prime | Restaurante Mineiro em São Paulo</title>
+
+  <meta
+    name="description"
+    content="O Mineiro Prime — restaurante mineiro na Consolação, São Paulo. Confira o cardápio, localização e formas de contato."
+  >
+
+  <meta
+    name="keywords"
+    content="comida mineira na Consolação, restaurante mineiro em São Paulo, O Mineiro Prime"
+  >
+
+  <meta name="theme-color" content="#3b2117">
+
+  <style>
+    :root {
+      --marrom: #3b2117;
+      --marrom-claro: #633722;
+      --dourado: #c6924b;
+      --creme: #f7efe3;
+      --creme-escuro: #ead9c0;
+      --verde: #304a36;
+      --branco: #ffffff;
+      --texto: #2b211c;
+      --cinza: #756a62;
+      --sombra: 0 15px 40px rgba(40, 24, 15, 0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--creme);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    /* ================= HEADER ================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(59, 33, 23, 0.96);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0,0,0,.15);
+    }
+
+    nav {
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: white;
+      font-size: 1.45rem;
+      font-weight: bold;
+      letter-spacing: .5px;
+    }
+
+    .logo span {
+      color: var(--dourado);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      font-size: .92rem;
+    }
+
+    .nav-links a {
+      color: white;
+      transition: .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--dourado);
+    }
+
+    .menu-button {
+      display: none;
+      border: 1px solid rgba(255,255,255,.4);
+      background: transparent;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      min-height: 92vh;
+      padding-top: 74px;
+
+      display: flex;
+      align-items: center;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(30, 16, 10, .88),
+          rgba(30, 16, 10, .42)
+        ),
+        url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+    }
+
+    .hero-content {
+      max-width: 760px;
+      color: white;
+      padding: 80px 0;
+    }
+
+    .eyebrow {
+      color: var(--dourado);
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: .78rem;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      line-height: 1.02;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      max-width: 620px;
+      font-family: Arial, sans-serif;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #f5eee8;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 21px;
+      border-radius: 999px;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      font-size: .92rem;
+      transition: .25s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--dourado);
+      color: #28170e;
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,.65);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,.1);
+    }
+
+    /* ================= SECTIONS ================= */
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 45px;
+    }
+
+    .section-title .eyebrow {
+      color: var(--marrom-claro);
+    }
+
+    .section-title h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+
+    .section-title p {
+      font-family: Arial, sans-serif;
+      color: var(--cinza);
+      line-height: 1.7;
+    }
+
+    /* ================= SOBRE ================= */
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .about-image {
+      min-height: 470px;
+      border-radius: 24px;
+
+      background:
+        url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1100&q=80")
+        center/cover;
+
+      box-shadow: 20px 20px 0 var(--creme-escuro);
+    }
+
+    .about-text h2 {
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      font-family: Arial, sans-serif;
+      color: var(--cinza);
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 5px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #eadcc9;
+      color: var(--marrom-claro);
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      font-size: .78rem;
+    }
+
+    /* ================= CARDÁPIO ================= */
+
+    .menu-section {
+      background: #fffaf3;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .menu-card {
+      background: white;
+      border: 1px solid #eadcca;
+      border-radius: 18px;
+      padding: 27px;
+
+      transition: .25s;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--sombra);
+    }
+
+    .menu-icon {
+      font-size: 1.7rem;
+      margin-bottom: 10px;
+    }
+
+    .menu-card h3 {
+      color: var(--marrom-claro);
+      font-size: 1.35rem;
+      margin-bottom: 8px;
+    }
+
+    .menu-card p {
+      font-family: Arial, sans-serif;
+      font-size: .92rem;
+      color: var(--cinza);
+    }
+
+    .edit-note {
+      text-align: center;
+      margin-top: 25px;
+      font-family: Arial, sans-serif;
+      font-size: .85rem;
+      color: var(--cinza);
+    }
+
+    /* ================= GALERIA ================= */
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-auto-rows: 230px;
+      gap: 14px;
+    }
+
+    .gallery-item {
+      border-radius: 18px;
+      background-position: center;
+      background-size: cover;
+      transition: .3s;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.02);
+    }
+
+    .gallery-main {
+      grid-row: span 2;
+      background-image:
+        url("https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1000&q=80");
+    }
+
+    .gallery-2 {
+      background-image:
+        url("https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80");
+    }
+
+    .gallery-3 {
+      background-image:
+        url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=800&q=80");
+    }
+
+    .gallery-4 {
+      background-image:
+        url("https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=800&q=80");
+    }
+
+    .gallery-5 {
+      background-image:
+        url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80");
+    }
+
+    /* ================= INFORMAÇÕES ================= */
+
+    .info-section {
+      background: var(--verde);
+      color: white;
+    }
+
+    .info-section .section-title .eyebrow {
+      color: #e4b86c;
+    }
+
+    .info-section .section-title p {
+      color: #d7d0cb;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .info-card {
+      border: 1px solid rgba(255,255,255,.13);
+      background: rgba(255,255,255,.06);
+      border-radius: 18px;
+      padding: 28px;
+    }
+
+    .info-card h3 {
+      color: #edc47d;
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+
+    .info-card p,
+    .info-card a {
+      font-family: Arial, sans-serif;
+      color: #eeeeee;
+      line-height: 1.7;
+    }
+
+    .map {
+      width: 100%;
+      height: 340px;
+      margin-top: 25px;
+      border: 0;
+      border-radius: 20px;
+    }
+
+    /* ================= CONTATO ================= */
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .btn-brown {
+      background: var(--marrom);
+      color: white;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background: #24140e;
+      color: #d8cbc2;
+      padding: 30px 0;
+      font-family: Arial, sans-serif;
+      font-size: .85rem;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* ================= WHATSAPP ================= */
+
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+
+      width: 58px;
+      height: 58px;
+
+      border-radius: 50%;
+      background: #25D366;
+      color: white;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+
+      box-shadow: 0 8px 25px rgba(0,0,0,.25);
+
+      z-index: 999;
+
+      transition: .25s;
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.08);
+    }
+
+    /* ================= RESPONSIVO ================= */
+
+    @media (max-width: 800px) {
+
+      .nav-links {
+        display: none;
+
+        position: absolute;
+        top: 74px;
+        left: 0;
+        right: 0;
+
+        padding: 20px 4%;
+
+        background: var(--marrom);
+
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image {
+        min-height: 330px;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 190px;
+      }
+
+      .gallery-main {
+        grid-row: span 2;
+      }
+    }
+
+    @media (max-width: 520px) {
+
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-main {
+        grid-row: span 1;
+      }
+
+      .gallery-item {
+        min-height: 220px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+
+  <header>
+    <div class="container">
+
+      <nav>
+
+        <a href="#inicio" class="logo">
+          O Mineiro <span>Prime</span>
+        </a>
+
+        <div class="nav-links" id="navLinks">
+
+          <a href="#sobre">Sobre</a>
+          <a href="#cardapio">Cardápio</a>
+          <a href="#galeria">Galeria</a>
+          <a href="#localizacao">Localização</a>
+          <a href="#contato">Contato</a>
+
+        </div>
+
+        <button
+          class="menu-button"
+          onclick="toggleMenu()"
+          aria-label="Abrir menu"
+        >
+          ☰
+        </button>
+
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- ================= HERO ================= -->
+
+  <section class="hero" id="inicio">
+
+    <div class="container">
+
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          Culinária mineira • Consolação • São Paulo
+        </div>
+
+        <h1>
+          Sabores de Minas no coração de São Paulo
+        </h1>
+
+        <p>
+          Comida brasileira, pratos generosos e aquele sabor
+          que lembra comida de casa.
+        </p>
+
+        <div class="buttons">
+
+          <a href="#cardapio" class="btn btn-primary">
+            Conheça o Cardápio
+          </a>
+
+          <a href="#contato" class="btn btn-outline">
+            Fale Conosco
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= SOBRE ================= -->
+
+  <section id="sobre">
+
+    <div class="container">
+
+      <div class="about">
+
+        <div class="about-image"></div>
+
+        <div class="about-text">
+
+          <div class="eyebrow">
+            Sobre o restaurante
+          </div>
+
+          <h2>
+            Um pedacinho de Minas em São Paulo
+          </h2>
+
+          <p>
+            O Mineiro Prime traz a inspiração da culinária
+            mineira para a Consolação, com uma proposta
+            acolhedora e sabores que combinam tradição
+            e aquele clima gostoso de comida de casa.
+          </p>
+
+          <p>
+            Conheça o cardápio, confira as informações
+            do restaurante e venha viver uma experiência
+            com sabor de Minas.
+          </p>
+
+          <span class="badge">
+            Rua Antônio Carlos, 282 • Consolação
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= CARDÁPIO ================= -->
+
+  <section class="menu-section" id="cardapio">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <div class="eyebrow">
+          Cardápio
+        </div>
+
+        <h2>
+          Escolha seu sabor
+        </h2>
+
+        <p>
+          Confira nossas categorias e descubra as opções
+          do O Mineiro Prime.
+        </p>
+
+      </div>
+
+
+      <div class="menu-grid">
+
+        <article class="menu-card">
+
+          <div class="menu-icon">🍛</div>
+
+          <h3>
+            Pratos mineiros
+          </h3>
+
+          <p>
+            Adicione aqui os pratos mineiros disponíveis
+            e suas descrições.
+          </p>
+
+        </article>
+
+
+        <article class="menu-card">
+
+          <div class="menu-icon">🥘</div>
+
+          <h3>
+            Feijoada
+          </h3>
+
+          <p>
+            Adicione aqui as opções de feijoada,
+            acompanhamentos e dias de serviço.
+          </p>
+
+        </article>
+
+
+        <article class="menu-card">
+
+          <div class="menu-icon">🥩</div>
+
+          <h3>
+            Carnes
+          </h3>
+
+          <p>
+            Adicione aqui as opções de carnes
+            e descrições dos pratos.
+          </p>
+
+        </article>
+
+
+        <article class="menu-card">
+
+          <div class="menu-icon">🍟</div>
+
+          <h3>
+            Porções
+          </h3>
+
+          <p>
+            Adicione aqui as porções disponíveis
+            para compartilhar.
+          </p>
+
+        </article>
+
+
+        <article class="menu-card">
+
+          <div class="menu-icon">🍚</div>
+
+          <h3>
+            Acompanhamentos
+          </h3>
+
+          <p>
+            Adicione aqui os acompanhamentos
+            disponíveis.
+          </p>
+
+        </article>
+
+
+        <article class="menu-card">
+
+          <div class="menu-icon">🥤</div>
+
+          <h3>
+            Bebidas
+          </h3>
+
+          <p>
+            Adicione aqui as bebidas disponíveis
+            e respectivos preços.
+          </p>
+
+        </article>
+
+
+        <article class="menu-card">
+
+          <div class="menu-icon">🍮</div>
+
+          <h3>
+            Sobremesas
+          </h3>
+
+          <p>
+            Adicione aqui as sobremesas disponíveis.
+          </p>
+
+        </article>
+
+      </div>
+
+
+      <p class="edit-note">
+        Os nomes, descrições e preços devem ser conferidos
+        e preenchidos pelo estabelecimento.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= GALERIA ================= -->
+
+  <section id="galeria">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <div class="eyebrow">
+          Galeria
+        </div>
+
+        <h2>
+          Um convite para comer com os olhos
+        </h2>
+
+        <p>
+          Substitua estas imagens ilustrativas pelas
+          fotos reais do restaurante, dos pratos e do ambiente.
+        </p>
+
+      </div>
+
+
+      <div class="gallery">
+
+        <div class="gallery-item gallery-main"></div>
+
+        <div class="gallery-item gallery-2"></div>
+
+        <div class="gallery-item gallery-3"></div>
+
+        <div class="gallery-item gallery-4"></div>
+
+        <div class="gallery-item gallery-5"></div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= LOCALIZAÇÃO ================= -->
+
+  <section class="info-section" id="localizacao">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <div class="eyebrow">
+          Visite
+        </div>
+
+        <h2>
+          Onde estamos
+        </h2>
+
+        <p>
+          Confira endereço, horários e formas de contato.
+        </p>
+
+      </div>
+
+
+      <div class="info-grid">
+
+        <div class="info-card">
+
+          <h3>
+            📍 Endereço
+          </h3>
+
+          <p>
+            Rua Antônio Carlos, 282<br>
+            Consolação, São Paulo - SP
+          </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <h3>
+            🕐 Horários
+          </h3>
+
+          <p>
+            Segunda a quarta:
+            11:00 às 00:00
+            <br>
+
+            Quinta e sexta:
+            11:00 à 01:00
+            <br>
+
+            Sábado e domingo:
+            11:00 às 00:00
+          </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <h3>
+            📱 Contato
+          </h3>
+
+          <p>
+
+            (11) 3262-1764
+
+            <br>
+
+            <a
+              href="https://instagram.com/omineiroprime"
+              target="_blank"
+            >
+              @omineiroprime
+            </a>
+
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- MAPA -->
+
+      <iframe
+        class="map"
+        loading="lazy"
+        allowfullscreen
+        src="https://www.google.com/maps?q=Rua%20Ant%C3%B4nio%20Carlos%2C%20282%2C%20Consola%C3%A7%C3%A3o%2C%20S%C3%A3o%20Paulo%20-%20SP&output=embed">
+      </iframe>
+
+
+      <div
+        class="buttons"
+        style="justify-content:center"
+      >
+
+        <a
+          class="btn btn-primary"
+          target="_blank"
+          href="https://www.google.com/maps/search/?api=1&query=Rua+Antônio+Carlos,+282,+Consolação,+São+Paulo+-+SP"
+        >
+          Como chegar
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= CONTATO ================= -->
+
+  <section class="contact" id="contato">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <div class="eyebrow">
+          Contato
+        </div>
+
+        <h2>
+          Vamos conversar?
+        </h2>
+
+        <p>
+          Entre em contato com o O Mineiro Prime
+          ou acompanhe o restaurante no Instagram.
+        </p>
+
+      </div>
+
+
+      <div class="contact-buttons">
+
+        <!-- TELEFONE -->
+
+        <a
+          class="btn btn-primary"
+          href="tel:+551132621764"
+        >
+          📞 Ligar agora
+        </a>
+
+
+        <!-- WHATSAPP -->
+
+        <a
+          class="btn btn-primary"
+          target="_blank"
+          href="https://wa.me/551132621764?text=Ol%C3%A1%2C%20O%20Mineiro%20Prime!"
+        >
+          💬 WhatsApp
+        </a>
+
+
+        <!-- INSTAGRAM -->
+
+        <a
+          class="btn btn-brown"
+          target="_blank"
+          href="https://instagram.com/omineiroprime"
+        >
+          📷 Instagram
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-content">
+
+        <span>
+          © O Mineiro Prime
+        </span>
+
+        <span>
+          Rua Antônio Carlos, 282 • Consolação • São Paulo - SP
+        </span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ================= WHATSAPP FLUTUANTE ================= -->
+
+  <a
+    class="whatsapp"
+    href="https://wa.me/551132621764?text=Ol%C3%A1%2C%20O%20Mineiro%20Prime!"
+    target="_blank"
+    aria-label="Falar pelo WhatsApp"
+  >
+    ☎
+  </a>
+
+
+  <!-- ================= JAVASCRIPT ================= -->
+
+  <script>
+
+    function toggleMenu() {
+
+      const menu = document.getElementById("navLinks");
+
+      menu.classList.toggle("active");
+
+    }
+
+
+    // Fecha o menu quando o usuário clica em um link
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        document
+          .getElementById("navLinks")
+          .classList.remove("active");
+
+      });
+
+    });
+
+
+    // Pequena animação ao aparecer na tela
+
+    const cards = document.querySelectorAll(
+      ".menu-card, .info-card, .gallery-item"
+    );
+
+    const observer = new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.1
+      }
+    );
+
+
+    cards.forEach(card => {
+
+      card.style.opacity = "0";
+      card.style.transform = "translateY(15px)";
+      card.style.transition = "opacity .6s ease, transform .6s ease";
+
+      observer.observe(card);
+
+    });
+
+  </script>
+
+</body>
+</html>
